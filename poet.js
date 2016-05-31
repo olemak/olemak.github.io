@@ -8,9 +8,7 @@ var AlltidPoesi = React.createClass({
 			programIds: [{ id: 'MYNT15001116', title: 'Skam' }, { id: 'DVFJ65001412', title: 'Dialektriket' }, { id: 'MSUB19001210', title: 'Krem Nasjonal' }, { id: 'KOID28002214', title: 'Månens hemmeligheter' }],
 			currentProgrammeId: 'MYNT15001116',
 			subtitles: [],
-			poem: [],
-			title: '',
-			description: ''
+			poem: []
 		};
 	},
 
@@ -46,28 +44,12 @@ var AlltidPoesi = React.createClass({
 				for (var i = 0; i <= allTextLines.length; i++) {
 					var processingParagraph = allTextLines[i];
 					if (typeof processingParagraph !== 'undefined') {
-						processingParagraph = processingParagraph.innerHTML.replace(/\<[^)]*\>/, ' ').replace(/\([^)]*\)/, ' '); // removes tags, removes parenthesis
+						processingParagraph = processingParagraph.innerHTML ? processingParagraph.innerHTML : processingParagraph.textContent;
+						processingParagraph = processingParagraph.replace(/\<[^)]*\>/, ' ').replace(/\([^)]*\)/, ' '); // removes tags, removes parenthesis
 						exportText.push(processingParagraph);
 					}
 				}
 				this.setState({ subtitles: exportText });
-			}
-			this.getProgrammeData();
-		}).bind(this);
-	},
-
-	getProgrammeData: function getProgrammeData() {
-		var programmeData = undefined;
-		var infoConnection = new XMLHttpRequest();
-		infoConnection.open('GET', 'http://v8.psapi.nrk.no/mediaelement/' + this.state.currentProgrammeId, true);
-		infoConnection.send();
-		infoConnection.onreadystatechange = (function () {
-			if (infoConnection.readyState == 4 && infoConnection.status == 200) {
-				programmeData = JSON.parse(infoConnection.responseText);
-				this.setState({ title: programmeData.title });
-				var programmeDescription = programmeData.description;
-				programmeDescription = programmeDescription.split('.')[0] + '.';
-				this.setState({ description: programmeDescription });
 			}
 			this.writePoem();
 		}).bind(this);
@@ -84,14 +66,14 @@ var AlltidPoesi = React.createClass({
 			// Pick a random paragraph from all the subtitles:
 			var randomParagraphNumber = Math.floor(Math.random() * this.state.subtitles.length) + 1;
 			var newLine = this.state.subtitles[randomParagraphNumber];
-			newLine = i === 0 ? newLine.split('<')[0] : newLine;
 
 			// strip out punctuation, poetry-like:
-			if (typeof newLine !== 'undefined') newLine = newLine.replace(/[—\/#!$%\^&\*;:{}=\-_`~()]/g, ' ').replace(/[\.|,]$/, '');
-			if (newLine.length < 15 && i > 0) savedLine = newLine;
-			newLine = savedLine + ' ' + newLine;
-			newPoem.push(newLine);
-			if (newLine.length > 30) savedLine = '';
+			if (typeof newLine !== 'undefined') {
+				newLine = newLine.replace(/[—\/#!$%\^&\*;:{}=\-_`~()]/g, ' ').replace(/[\.,]$/, '.');
+				if (i < 1) newLine = newLine.replace(/\.$/, '');
+				if (newLine.length < 10 && i > 0) savedLine = newLine;
+				newPoem.push(newLine);
+			}
 		}
 		this.setState({ poem: newPoem });
 	},
@@ -152,28 +134,6 @@ var PoemLine = React.createClass({
 			'h4',
 			null,
 			this.props.data
-		);
-	}
-});
-
-var ProgrammePicker = React.createClass({
-	displayName: 'ProgrammePicker',
-
-	rawHTML: function rawHTML(text) {
-		return { __html: text };
-	},
-
-	render: function render() {
-		return React.createElement(
-			'p',
-			null,
-			'Fra ',
-			React.createElement(
-				'em',
-				null,
-				this.rawHTML(this.props.programmeTitle)
-			),
-			this.rawHTML(this.props.programmeDescription)
 		);
 	}
 });
