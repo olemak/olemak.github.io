@@ -15,6 +15,12 @@ html {
   }
 }
 
+@media screen and (min-device-pixel-ratio: 3) {
+  html {
+    font-size: 122px;
+  }
+}
+
 body {
   margin: 0;
 }
