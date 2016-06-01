@@ -2,9 +2,9 @@
 
 html {
 	font-size: 22px;
-	@media screen and (device-pixel-ratio: 1.5){
+	@media screen and (min-device-pixel-ratio: 1.5){
 		font-size: 32px;
-	}	@media screen and (device-pixel-ratio: 2){
+	}	@media screen and (min-device-pixel-ratio: 2){
 		font-size: 44px;
 	}
 }
