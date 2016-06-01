@@ -1,20 +1,27 @@
 # olemak.github.io
-Olemak's personal website. Changes a lot, will usually contain tech demos and stuff; maybe a blog at some point.
+Olemak's personal website. Changes a lot, will usually contain tech demos; maybe a blog at some point.
 
 ## Right now, it's a poetry generator!
 
-I found out that The Norwegian Broadcasting Corporation has an open API for all of it's subtitles, and they subtitle everything.
-So I figured I could grab a few subtitles and mess with them to make cutup-style pseudo-poetry.
+I found out that The Norwegian Broadcasting Corporation has an open API for all their subtitles, and they subtitle _everything_.
+So I figured I could grab a few subtitles and mess with them to make a cutup-style pseudo-poetry generator.
 
 Furthermore, it uses React.js to display the poems and also to switch between different subtitle sources (programmes).
-Naturally, the results are very different for the popular teen drama "Skam" ("Shame") or a nature show.
+Naturally, the results are very different for a teen drama like "Skam" ("Shame") or a nature show.
 
 It's all in Norwegian, I mostly did this for fun and learning; I could add more sources and more programmes to the select list at the top of the page, but I don't think that's going to happen.
 
-## Controls: 
+## Controls
 There are two UI elements: a reload icon and a drop-down list.
 __The Reload Icon__ will compose a new poem from the subtitles already fetched from NRK.
 __The Dropdown__ will fetch subtitles for another show and make a poem based on that.
+
+## Room for improvement
+Some features that could be added or expanded, are:
+* __Cached subtitles__. Each time a new show/programme is selected, the old subtiles are simpluy replaced by new ones piped in with ajax magic. I could potentially preserve the old subtitles if the current methor represents a load on server resources. 
+* __Saved poems__. These fleeting lines are not saved anywhere; I could have made a persistant system that also allowed link sharing to twitter, facebook et cetera, but I dont think anyone one use it. Besides, I like the fleeting nature of the "poems".
+* __Editable poems__. Lines could be reorderable and deletable, and the text could be editable. 
+* __More sources__. I could quite easily add more programmes/series, and also make it possible to choose between seasons and episodes for each supported show. It would make the UI more complicated, though, and for a fun little thing like this it's not exactly  _neccecary_. 
 
 ## Browser support
 Tested in Chrome, Firefox and Internet Explorer; other browsers should be OK as long as they're not known for iffy javascript implementations.
