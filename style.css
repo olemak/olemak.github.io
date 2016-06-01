@@ -3,19 +3,13 @@ html {
   font-size: 22px;
 }
 
-@media (min-pixel-device-ratio: 2) {
-  html {
-    font-size: 44px;
-  }
-}
-
 body {
   margin: 0;
 }
 
 .topmenu {
   background-color: #bbb;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   font-size: 2rem;
 }
@@ -33,15 +27,23 @@ body {
   max-width: 70vw;
 }
 
+@media only screen and (max-width: 414px) {
+  .topmenu select {
+    font-size: 42px;
+    max-width: 60vw;
+  }
+}
+
 .controls {
   width: 94vw;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (min-pixel-device-ratio: 2) {
+@media only screen and (max-width: 414px) {
   .controls {
     font-size: 64px;
+    margin-left: 10px;
   }
 }
 
@@ -58,4 +60,16 @@ body {
 
 #poemBody h4 {
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 414px) {
+  #poemBody {
+    width: 90%;
+  }
+  #poemBody h2 {
+    font-size: 4rem;
+  }
+  #poemBody h4 {
+    font-size: 2.4rem;
+  }
 }
