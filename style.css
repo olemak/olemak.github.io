@@ -39,6 +39,12 @@ body {
   margin-right: auto;
 }
 
+@media (min-pixel-device-ratio: 2) {
+  .controls {
+    font-size: 64px;
+  }
+}
+
 #poemBody {
   width: 18rem;
   margin-left: auto;
