@@ -17,5 +17,7 @@ __The Reload Icon__ will compose a new poem from the subtitles already fetched f
 __The Dropdown__ will fetch subtitles for another show and make a poem based on that.
 
 ## Browser support
-Being a consise little thing, I figured I'd do this without jQuery but I'm sorta regretting that.
-Right now, it doesn't work in IE, but I'm working on that.
+Tested in Chrome, Firefox and Internet Explorer; other browsers should be OK as long as they're not known for iffy javascript implementations.
+One caveat for__Internet Explorer__: The NRK subtitles are grabbed from an XML-like format (TTF: Timed Text Format) and parsed, meaning that each paragraph appears as a virtual DOM node at the time of processing, and can be console logged as such. Most browsers will gladly grab the innerHTML of virtual nodes - but not our special friend Internet Explorer. IE will only grab the innerHTML from actual, rendered DOM nodes. So for IE, I had to use the property textContent instead. This is not optimal, because the textContent will simply cut break tags and not replace them with a space. I guess I could, in a loop, create a node for each subtitle element, add it to the DOM, grab the innerHTML of it and then destroy the node again. It would be a pretty hard hit to performance, and in my opinion it is not worth it, so for this simple demo I'll chalk it up to "(semi-)graceful detoriation".
+
+So in IE (and other browsers that act like it) longer text elements will usually have two words mashed together without dividing whitespace. 
