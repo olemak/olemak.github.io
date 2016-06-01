@@ -58,6 +58,17 @@ body {
   font-family: "Libre Baskerville", Times, serif;
 }
 
+@media screen and (min-device-pixel-ratio: 2) {
+  #poemBody {
+    width: 100%;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  #poemBody h4 {
+    text-align: center;
+  }
+}
+
 #poemBody h2 {
   font-size: 2rem;
 }
