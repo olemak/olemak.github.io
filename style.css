@@ -4,19 +4,8 @@
 /************************
        HEADER/
 ************************/
-/*
-thead {
-	top: 6.2rem;
-	left: 8rem;
-	.sortable:first-child {
-		visibility: hidden;
-		&:before {
-		}
-	}
-}
-*/
 #statsHeader select {
-  width: calc(100% - 0.4rem);
+  width: calc(100vw - 1rem);
   margin: 0.2rem;
   text-align: center;
   font-size: 3rem;
@@ -63,7 +52,7 @@ thead {
        MAIN TABLE
 ************************/
 #statsBrowser caption {
-  width: calc(100% - 0.4rem);
+  width: calc(100vw - 1rem);
   background-color: #cbcbcb;
   font-size: 1.2rem;
   margin: 0 2px;
@@ -155,6 +144,19 @@ thead {
   padding-top: 2rem;
 }
 
+@media handheld {
+  #options {
+    font-size: 2.8rem;
+  }
+  #options form input {
+    width: 4.4rem;
+    height: 2.4rem;
+  }
+}
+
+/************************
+	ANIMATION KEYFRAMES
+************************/
 @keyframes appear {
   0% {
     opacity: 0;
