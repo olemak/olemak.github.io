@@ -23,7 +23,11 @@ class Posts extends Component {
         return (
             <div>
                 <h1>Posts</h1>
-                {this.state.posts ? this.state.posts.map((post, i)=><Post headline={post.fields.title} key={"post_" + i} />) : ''}  
+                {this.state.posts ? this.state.posts.map((post, i)=><Post 
+                    headline={post.fields.title} 
+                    intro={post.fields.intro}                     
+                    key={"post_" + i} />) 
+                    : ''}  
             </div>
         )
     }
