@@ -1,9 +1,5 @@
-import getPosts from './js/getPosts.js'
 import Posts from './components/Posts.jsx'
 import ReactDOM from 'react-dom'
-
-getPosts();
-
 
 (() => { function ready() {
     let root = document.querySelector('[data-root]')

@@ -9754,20 +9754,16 @@ module.exports = getHostComponentFromComposite;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_getPosts_js__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Posts_jsx__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Posts_jsx__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 
 
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__js_getPosts_js__["a" /* default */])();
 
 (() => {
   function ready() {
     let root = document.querySelector('[data-root]');
-    __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render(React.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Posts_jsx__["a" /* default */], null), root);
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(React.createElement(__WEBPACK_IMPORTED_MODULE_0__components_Posts_jsx__["a" /* default */], null), root);
   };
   if (document.readyState != 'loading') {
     ready();
@@ -9777,28 +9773,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__js_getPosts_js__["a" /* default */])();
 })();
 
 /***/ }),
-/* 83 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_contentful__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_contentful___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_contentful__);
-
-
-const getPosts = () => {
-    let client = Object(__WEBPACK_IMPORTED_MODULE_0_contentful__["createClient"])({
-        space: 'y7jhvpcyb2y8',
-        accessToken: '7871df3659bf27af877eb2d913229a27dde93785633427d55eecf65c0e534d2c'
-    });
-
-    client.getEntries().then(entries => {
-        window.posts = entries;
-    });
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (getPosts);
-
-/***/ }),
+/* 83 */,
 /* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

@@ -1,0 +1,37 @@
+{
+  "name": "olemak-github-io",
+  "version": "1.0.0",
+  "description": "Github pages with dynamic content from contentful API, served by React",
+  "main": "entry.js",
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "contentful": "^4.5.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.3.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.5.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olemak/olemak.github.io.git"
+  },
+  "keywords": [
+    "react",
+    "contentful",
+    "es2015"
+  ],
+  "author": "Ole Martin Kristiansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olemak/olemak.github.io/issues"
+  },
+  "homepage": "https://github.com/olemak/olemak.github.io#readme"
+}
