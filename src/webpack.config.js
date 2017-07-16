@@ -13,10 +13,11 @@ var path = require('path');
    module: {
      rules: [
        {
-         test: /\.css$/,
+         test: /\.scss|.css$/,
          use: [
            'style-loader',
-           'css-loader'
+           { loader: 'css-loader', options: { importLoaders: 1 } },
+           'postcss-loader'
          ]
        },
        {

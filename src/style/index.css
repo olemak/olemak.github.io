@@ -1,0 +1,34 @@
+import url("~normalize.css");
+
+body {
+    background-color: pink
+}
+
+p {}
+    font-family: 'Lato', sans-serif
+
+h1, h2, h3, h4, h5, h6
+    font-family: 'Plaster', sans-serif
+
+.Posts 
+    margin: 2vh 2vw
+
+.Posts__single 
+    padding: 1vw
+    border: 1px solid darkgray
+    display: flex
+    flex-flow: column nowrap
+    h2
+        position: absolute
+        font-size: 2em
+        text-transform: uppercase
+        margin: 0 20% 0 1.6em
+        line-height: 1em
+    & img 
+        width: 100%
+        height: 10vh
+        object-fit: cover        
+    &.active 
+        border: 1px solid red
+        img
+        height:auto

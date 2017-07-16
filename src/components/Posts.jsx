@@ -21,11 +21,16 @@ class Posts extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Posts</h1>
+            <div className="Posts">
+                <h1>Header</h1><p>Should be a different component I guess</p>
                 {this.state.posts ? this.state.posts.map((post, i)=><Post 
                     headline={post.fields.title} 
-                    intro={post.fields.intro}                     
+                    intro={post.fields.intro}
+                    image={{
+                        url: post.fields.image.fields.file.url,
+                        alt: post.fields.image.fields.description
+                    }}
+                    body={post.fields.body}               
                     key={"post_" + i} />) 
                     : ''}  
             </div>

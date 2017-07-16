@@ -15,6 +15,14 @@
     "webpack": "^3.3.0"
   },
   "devDependencies": {
+    "css-loader": "^0.28.4",
+    "normalize.css": "^7.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.0.4",
+    "postcss-scss": "^1.0.2",
+    "precss": "^2.0.0",
+    "style-loader": "^0.18.2",
     "webpack-dev-server": "^2.5.1"
   },
   "scripts": {
